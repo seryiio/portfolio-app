@@ -1,20 +1,56 @@
 ---
+import Close from "../icons/Close.astro";
 
+const navHome = "Inicio";
+const navAbout = "Sobre mí";
+const navProjects = "Proyectos";
+const navContact = "Contáctame";
 ---
 
-<header class="flex justify-between items-center p-8">
+<header class="flex justify-between items-center p-8 bg-white dark:bg-black z-[998]">
     <div>
         <h1>Waynas <span class="text-cyan-400">.</span></h1>
     </div>
     <div class="flex justify-center items-center gap-8">
         <ul class="hidden lg:flex justify-center items-center gap-4">
-            <li><a href="" class="hover:text-cyan-400 hover:font-bold">Inicio</a></li>
-            <li><a href="" class="hover:text-cyan-400 hover:font-bold">Sobre mi</a></li>
-            <li><a href="" class="hover:text-cyan-400 hover:font-bold">Proyectos</a></li>
-            <li><a href="" class="hover:text-cyan-400 hover:font-bold">Contáctame</a></li>
+            <li>
+                <a href="" class="hover:text-cyan-400 hover:font-bold"
+                    >{navHome}</a
+                >
+            </li>
+            <li>
+                <a href="" class="hover:text-cyan-400 hover:font-bold"
+                    >{navAbout}</a
+                >
+            </li>
+            <li>
+                <a href="" class="hover:text-cyan-400 hover:font-bold"
+                    >{navProjects}</a
+                >
+            </li>
+            <li>
+                <a href="" class="hover:text-cyan-400 hover:font-bold"
+                    >{navContact}</a
+                >
+            </li>
         </ul>
-        <button id="darkModeToggle">
-            <svg xmlns="http://www.w3.org/2000/svg" class="hidden dark:block icon icon-tabler icon-tabler-sun fill-black dark:fill-white " width="26" height="36" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 12m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0" /><path d="M3 12h1m8 -9v1m8 8h1m-9 8v1m-6.4 -15.4l.7 .7m12.1 -.7l-.7 .7m0 11.4l.7 .7m-12.1 -.7l-.7 .7" /></svg>
+        <button id="darkModeToggle" class="transition-colors">
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="hidden dark:block icon icon-tabler icon-tabler-sun fill-black dark:fill-white"
+                width="26"
+                height="36"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                fill="none"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
+                    d="M12 12m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0"></path><path
+                    d="M3 12h1m8 -9v1m8 8h1m-9 8v1m-6.4 -15.4l.7 .7m12.1 -.7l-.7 .7m0 11.4l.7 .7m-12.1 -.7l-.7 .7"
+                ></path></svg
+            >
             <svg
                 xmlns="http://www.w3.org/2000/svg"
                 height="22"
@@ -26,7 +62,7 @@
                 ></path></svg
             >
         </button>
-        <button>
+        <button id="menu">
             <svg
                 class="flex lg:hidden fill-black dark:fill-white"
                 height="20"
@@ -40,16 +76,48 @@
         </button>
     </div>
 </header>
+<div
+    id="sidebar"
+    class="flex fixed top-0 -right-full transition-all flex-col gap-12 w-full h-screen bg-black dark:bg-white text-white dark:text-black p-8 z-[999]"
+>
+    <div class="flex justify-end items-center">
+        <button id="close">
+            <Close />
+        </button>
+    </div>
+    <nav class="flex flex-col justify-center items-center text-center">
+        <ul class="flex flex-col gap-12">
+            <li><a href="#" class="text-2xl">{navHome}</a></li>
+            <li><a href="#about" class="text-2xl">{navAbout}</a></li>
+            <li><a href="#projects" class="text-2xl">{navProjects}</a></li>
+            <li><a href="#contact" class="text-2xl">{navContact}</a></li>
+        </ul>
+    </nav>
+</div>
 <script>
     document.addEventListener("DOMContentLoaded", function () {
-        // Obtén el botón de cambio de modo oscuro
         const darkModeToggle = document.getElementById("darkModeToggle");
+        const menuButton = document.getElementById("menu");
+        const sidebar = document.getElementById("sidebar");
+        const closeSidebar = document.getElementById("close");
 
-        // Verifica si el elemento existe antes de agregar el event listener
         if (darkModeToggle) {
             darkModeToggle.addEventListener("click", function () {
-                // Alternar la clase 'dark' en el elemento body
                 document.body.classList.toggle("dark");
+            });
+        }
+
+        if (menuButton && sidebar) {
+            menuButton.addEventListener("click", function () {
+                sidebar.classList.toggle("-right-full");
+                sidebar.classList.add("right-0");
+            });
+        }
+
+        if (closeSidebar && sidebar) {
+            closeSidebar.addEventListener("click", function () {
+                sidebar.classList.toggle("-right-full");
+                sidebar.classList.remove("right-0");
             });
         }
     });

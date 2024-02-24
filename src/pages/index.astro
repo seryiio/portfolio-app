@@ -10,7 +10,7 @@ import Github from "../icons/github.astro";
 import Mail from "../icons/mail.astro";
 
 const presentation = "Hola 👋 soy";
-const name: string = "Sergio Nicolas Huamán Cheng";
+const name: string = "Sergio Huamán";
 const skillsDescription: string =
 	"Desarrollador Fullstack, apasionado por las nuevas tecnologías";
 
@@ -59,11 +59,16 @@ const titleContent5 = "Mis Proyectos";
 	<main
 		class="bg-[#fffefe] text-[#0e0f0e] dark:bg-[#0e0f0e] dark:text-[#f0f0f1]"
 	>
-		<Header />
+		<header class="sticky top-0 left-0">
+			<Header />
+		</header>
 		<div
+			id=""
 			class="flex flex-wrap flex-col-reverse lg:flex-row items-center justify-center text-center lg:text-left gap-24 pt-4 pb-24 lg:p-14"
 		>
-			<div class="flex flex-col gap-4 w-full lg:w-3/6">
+			<div
+				class="flex justify-center items-center flex-col gap-4 w-full lg:w-3/6"
+			>
 				<p class="text-2xl">{presentation}</p>
 				<div class="flex flex-col lg:flex-row gap-4">
 					<span class="flex text-5xl">{name}</span>
@@ -110,7 +115,7 @@ const titleContent5 = "Mis Proyectos";
 				/>
 			</div>
 		</div>
-		<div>
+		<div id="about">
 			<div class="grid gap-y-12 place-items-center p-4 lg:px-24 lg:py-14">
 				<div class="grid gap-4">
 					<h1>
@@ -163,7 +168,10 @@ const titleContent5 = "Mis Proyectos";
 				<Card />
 			</div>
 		</div>
-		<div class="flex flex-col justify-center items-start gap-8 p-4 lg:px-24 lg:py-14">
+		<div
+			id="projects"
+			class="flex flex-col justify-center items-start gap-8 p-4 lg:px-24 lg:py-14"
+		>
 			<h1>{titleContent5} <span class="text-cyan-400">.</span></h1>
 			<Projects />
 		</div>
