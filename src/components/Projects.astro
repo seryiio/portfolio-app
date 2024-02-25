@@ -32,7 +32,9 @@ const seeGithub = "Ver en Github";
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
     {
         projects.map((p) => (
-            <div class="flex flex-col justify-end items-end max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 ">
+            <div
+                class="flex flex-col justify-end items-end max-w-sm bg-white border-2 border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700  border-solid"
+            >
                 <a href={p.url}>
                     <img class="rounded-t-lg" src={p.image} alt={p.name} />
                 </a>
