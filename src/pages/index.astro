@@ -54,12 +54,13 @@ const titleContent4 = "Tecnologías";
 
 const titleContent5 = "Mis Proyectos";
 ---
+
 <Layout title="Sergio Huamán.">
 	<main class="lg:container mt-0 mx-auto text-[#0e0f0e] dark:text-[#f0f0f1]">
-		<header id="header" class="sticky top-0 left-0">
+		<header class="sticky top-0 left-0">
 			<Header />
 		</header>
-		<div
+		<section
 			id=""
 			class="flex flex-wrap flex-col-reverse lg:flex-row items-center justify-center text-center lg:text-left gap-24 pt-4 pb-24 lg:p-14"
 		>
@@ -111,8 +112,8 @@ const titleContent5 = "Mis Proyectos";
 					class="rounded-full border-4 dark:border-gray-100 lg:border-gray-800"
 				/>
 			</div>
-		</div>
-		<div id="about">
+		</section>
+		<section id="about">
 			<div class="grid gap-y-12 place-items-center p-4 lg:px-24 lg:py-14">
 				<div class="grid gap-4">
 					<h1>
@@ -122,10 +123,10 @@ const titleContent5 = "Mis Proyectos";
 					<p>{descriptionAboutMeContent2}</p>
 				</div>
 			</div>
-		</div>
-		<div>
+		</section>
+		<section>
 			<div
-				class="grid grid-cols-1 gap-y-8 place-items-center p-4 lg:px-24 lg:py-14"
+				class="grid grid-cols-1 gap-y-8 place-items-center p-8 lg:px-24 lg:py-14"
 			>
 				<h1>{titleContent3} <span class="text-cyan-400">.</span></h1>
 				<div>
@@ -144,7 +145,7 @@ const titleContent5 = "Mis Proyectos";
 							listEducationComplementarys.map((e) => {
 								return (
 									<li>
-										<a href={e.link} class="text-cyan-400">
+										<a href={e.link} class="text-cyan-400" target="_blank">
 											{e.name}
 										</a>
 										<p class="italic">{e.institution}</p>
@@ -156,22 +157,22 @@ const titleContent5 = "Mis Proyectos";
 					</ul>
 				</div>
 			</div>
-		</div>
-		<div>
+		</section>
+		<section>
 			<div
 				class="grid grid-cols-1 gap-y-8 place-items-center p-4 lg:px-24 lg:py-14"
 			>
 				<h1>{titleContent4} <span class="text-cyan-400">.</span></h1>
 				<Card />
 			</div>
-		</div>
-		<div
+		</section>
+		<section
 			id="projects"
 			class="flex flex-col justify-center items-start gap-8 p-4 lg:px-24 lg:py-14"
 		>
 			<h1>{titleContent5} <span class="text-cyan-400">.</span></h1>
 			<Projects />
-		</div>
+		</section>
+		<Footer />
 	</main>
-	<Footer />
 </Layout>
