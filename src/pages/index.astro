@@ -56,8 +56,10 @@ const titleContent4 = "Tecnologías";
 const titleContent5 = "Mis Proyectos";
 ---
 
-<Layout title="Sergio Huamán.">
-	<main class="lg:container mt-0 mx-auto text-secondary dark:text-secondaryDark">
+<Layout title="Sergio Nicolas Huamán Cheng.">
+	<main
+		class="lg:container mt-0 mx-auto text-secondary dark:text-secondaryDark"
+	>
 		<header class="sticky top-0 left-0">
 			<Header />
 		</header>
@@ -78,7 +80,7 @@ const titleContent5 = "Mis Proyectos";
 						>
 					</div>
 				</div>
-				<h3 class="text-1xl">{skillsDescription}</h3>
+				<h2 class="text-1xl">{skillsDescription}</h2>
 				<div class="flex flex-col justify-center items-center gap-4">
 					<div
 						class="socialMedia flex justify-center flex-wrap items-center gap-2"
@@ -110,11 +112,15 @@ const titleContent5 = "Mis Proyectos";
 			</div>
 		</section>
 		<section id="about">
-			<div class="grid gap-y-12 place-items-center pt-8 pb-4 px-4 lg:px-24">
+			<div
+				class="grid gap-y-12 place-items-center pt-8 pb-4 px-4 lg:px-24"
+			>
 				<div class="grid gap-4">
 					<h1>
 						{titleContent2}
-						<span class="text-secondary2 dark:text-secondary2Dark">.</span>
+						<span class="text-secondary2 dark:text-secondary2Dark"
+							>.</span
+						>
 					</h1>
 					<p>{descriptionAboutMeContent2}</p>
 				</div>
@@ -124,11 +130,15 @@ const titleContent5 = "Mis Proyectos";
 			<div
 				class="grid grid-cols-1 gap-y-8 place-items-center pt-4 pb-4 px-4 lg:px-24"
 			>
-				<h1>{titleContent3} <span class="text-secondary2 dark:text-secondary2Dark">.</span></h1>
+				<h1>
+					{titleContent3}
+					<span class="text-secondary2 dark:text-secondary2Dark"
+						>.</span>
+				</h1>
 				<div>
 					<ul class="list-disc">
 						<li>
-							<h2>{educationUniversitary}</h2>
+							<h2 class="font-bold">{educationUniversitary}</h2>
 							<p class="italic">{institutionUniversitary}</p>
 							<p class="italic">{state}</p>
 						</li>
@@ -141,7 +151,11 @@ const titleContent5 = "Mis Proyectos";
 							listEducationComplementarys.map((e) => {
 								return (
 									<li>
-										<a href={e.link} class="text-secondary2 dark:text-secondary2Dark underline underline-offset-1" target="_blank">
+										<a
+											href={e.link}
+											class="text-secondary2 dark:text-secondary2Dark underline underline-offset-1"
+											target="_blank"
+										>
 											{e.name}
 										</a>
 										<p class="italic">{e.institution}</p>
@@ -158,7 +172,11 @@ const titleContent5 = "Mis Proyectos";
 			<div
 				class="grid grid-cols-1 gap-y-8 place-items-center pt-4 pb-4 px-4 lg:px-24"
 			>
-				<h1>{titleContent4} <span class="text-secondary2 dark:text-secondary2Dark">.</span></h1>
+				<h1>
+					{titleContent4}
+					<span class="text-secondary2 dark:text-secondary2Dark"
+						>.</span>
+				</h1>
 				<Card />
 			</div>
 		</section>
@@ -166,7 +184,10 @@ const titleContent5 = "Mis Proyectos";
 			id="projects"
 			class="flex flex-col justify-center items-start gap-8 pt-4 pb-4 px-4 lg:px-24"
 		>
-			<h1>{titleContent5} <span class="text-secondary2 dark:text-secondary2Dark">.</span></h1>
+			<h1>
+				{titleContent5}
+				<span class="text-secondary2 dark:text-secondary2Dark">.</span>
+			</h1>
 			<Projects />
 		</section>
 		<Footer />
