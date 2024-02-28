@@ -1,5 +1,18 @@
+---
+const Arraynav = [
+    { name: "Inicio", href: "#" },
+    { name: "Sobre mí", href: "#about" },
+    { name: "Proyectos", href: "#projects" },
+    {
+        name: "Contáctame",
+        href: "mailto:sergiohuamanch15@gmail.com",
+        target: "_blank",
+    },
+];
+---
+
 <footer class="dark:bg-black">
-    <div class="flex flex-col max-w-screen-xl px-8 md:py-8">
+    <div class="flex flex-col max-w-screen-xl px-8 md:py-8 text-center">
         <div class="sm:flex sm:items-center sm:justify-between">
             <span
                 class="block text-sm text-gray-500 sm:text-center dark:text-gray-400"
@@ -10,17 +23,19 @@
             <ul
                 class="flex flex-wrap items-center mb-6 text-sm font-medium text-gray-500 sm:mb-0 dark:text-gray-400"
             >
-                <li>
-                    <a href="#" class="hover:underline me-4 md:me-6">Sobre mi</a>
-                </li>
-                <li>
-                    <a href="#" class="hover:underline me-4 md:me-6"
-                        >Proyectos</a>
-                </li>
-                <li>
-                    <a href="#" class="hover:underline me-4 md:me-6"
-                        >Contacto</a>
-                </li>
+                {
+                    Arraynav.map((av) => (
+                        <li>
+                            <a
+                                href={av.href}
+                                target={av.target || ""}
+                                class="hover:underline me-4 md:me-6"
+                            >
+                                {av.name}
+                            </a>
+                        </li>
+                    ))
+                }
             </ul>
         </div>
     </div>

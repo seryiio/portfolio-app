@@ -1,10 +1,24 @@
 ---
 import Close from "../icons/Close.astro";
+import Sun from "../icons/Sun.astro";
+import Moon from "../icons/Moon.astro";
+import Menu from "../icons/Menu.astro";
 
 const navHome = "Inicio";
 const navAbout = "Sobre mí";
 const navProjects = "Proyectos";
 const navContact = "Contáctame";
+
+const Arraynav = [
+    { name: "Inicio", href: "#" },
+    { name: "Sobre mí", href: "#about" },
+    { name: "Proyectos", href: "#projects" },
+    {
+        name: "Contáctame",
+        href: "mailto:sergiohuamanch15@gmail.com",
+        target: "_blank",
+    },
+];
 ---
 
 <header
@@ -12,76 +26,40 @@ const navContact = "Contáctame";
     class="flex justify-between bg-transparent items-center px-8 py-2 z-[998] transition-colors ease-in duration-300"
 >
     <div>
-        <h1>Waynas <span class="text-cyan-400">.</span></h1>
+        <h1>
+            Waynas <span class="text-secondary2 dark:text-secondary2Dark"
+                >.</span
+            >
+        </h1>
     </div>
     <div class="flex justify-center items-center gap-8">
         <ul class="hidden lg:flex justify-center items-center gap-4">
-            <li>
-                <a href="" class="hover:text-cyan-400 hover:font-bold"
-                    >{navHome}</a
-                >
-            </li>
-            <li>
-                <a href="" class="hover:text-cyan-400 hover:font-bold"
-                    >{navAbout}</a
-                >
-            </li>
-            <li>
-                <a href="" class="hover:text-cyan-400 hover:font-bold"
-                    >{navProjects}</a
-                >
-            </li>
-            <li>
-                <a href="" class="hover:text-cyan-400 hover:font-bold"
-                    >{navContact}</a
-                >
-            </li>
+            {
+                Arraynav.map((av) => (
+                    <li>
+                        <a
+                            href={av.href}
+                            target={av.target || ""}
+                            class="hover:text-secondary2 dark:hover:text-secondary2Dark hover:font-bold"
+                        >
+                            {av.name}
+                        </a>
+                    </li>
+                ))
+            }
         </ul>
         <button id="darkModeToggle" class="transition-colors">
-            <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="hidden dark:block icon icon-tabler icon-tabler-sun fill-black dark:fill-white"
-                width="26"
-                height="36"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                stroke="currentColor"
-                fill="none"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
-                    d="M12 12m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0"></path><path
-                    d="M3 12h1m8 -9v1m8 8h1m-9 8v1m-6.4 -15.4l.7 .7m12.1 -.7l-.7 .7m0 11.4l.7 .7m-12.1 -.7l-.7 .7"
-                ></path></svg
-            >
-            <svg
-                xmlns="http://www.w3.org/2000/svg"
-                height="22"
-                width="18.5"
-                viewBox="0 0 384 512"
-                class="block dark:hidden fill-black dark:fill-white"
-                ><path
-                    d="M144.7 98.7c-21 34.1-33.1 74.3-33.1 117.3c0 98 62.8 181.4 150.4 211.7c-12.4 2.8-25.3 4.3-38.6 4.3C126.6 432 48 353.3 48 256c0-68.9 39.4-128.4 96.8-157.3zm62.1-66C91.1 41.2 0 137.9 0 256C0 379.7 100 480 223.5 480c47.8 0 92-15 128.4-40.6c1.9-1.3 3.7-2.7 5.5-4c4.8-3.6 9.4-7.4 13.9-11.4c2.7-2.4 5.3-4.8 7.9-7.3c5-4.9 6.3-12.5 3.1-18.7s-10.1-9.7-17-8.5c-3.7 .6-7.4 1.2-11.1 1.6c-5 .5-10.1 .9-15.3 1c-1.2 0-2.5 0-3.7 0c-.1 0-.2 0-.3 0c-96.8-.2-175.2-78.9-175.2-176c0-54.8 24.9-103.7 64.1-136c1-.9 2.1-1.7 3.2-2.6c4-3.2 8.2-6.2 12.5-9c3.1-2 6.3-4 9.6-5.8c6.1-3.5 9.2-10.5 7.7-17.3s-7.3-11.9-14.3-12.5c-3.6-.3-7.1-.5-10.7-.6c-2.7-.1-5.5-.1-8.2-.1c-3.3 0-6.5 .1-9.8 .2c-2.3 .1-4.6 .2-6.9 .4z"
-                ></path></svg
-            >
+            <Moon />
+            <Sun />
         </button>
         <button id="menu">
-            <svg
-                class="flex lg:hidden fill-black dark:fill-white"
-                height="20"
-                width="17.5"
-                viewBox="0 0 448 512"
-            >
-                <path
-                    d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"
-                ></path></svg
-            >
+            <Menu />
         </button>
     </div>
 </header>
 <div
     id="sidebar"
-    class="flex fixed top-0 -right-full transition-all ease-in-out duration-300 flex-col gap-12 w-full h-screen bg-white dark:bg-black text-black dark:text-white p-8 z-[999]"
+    class="flex fixed top-0 -right-full transition-all ease-in-out duration-300 flex-col gap-12 w-full h-screen bg-primary dark:bg-primaryDark text-secondary dark:text-secondaryDark p-8 z-[999]"
 >
     <div class="flex justify-end items-center">
         <button id="close">
@@ -92,26 +70,19 @@ const navContact = "Contáctame";
         class="flex flex-col justify-center bg-neutra items-center text-center"
     >
         <ul class="flex flex-col gap-12">
-            <li>
-                <a class="nav-selected-sidebar text-2xl" href="#">{navHome}</a>
-            </li>
-            <li>
-                <a class="nav-selected-sidebar text-2xl" href="#about"
-                    >{navAbout}</a
-                >
-            </li>
-            <li>
-                <a class="nav-selected-sidebar text-2xl" href="#projects"
-                    >{navProjects}</a
-                >
-            </li>
-            <li>
-                <a
-                    href="mailto:sergiohuamanch15@gmail.com"
-                    target="_blank"
-                    class="nav-selected-sidebar text-2xl">{navContact}</a
-                >
-            </li>
+            {
+                Arraynav.map((av) => (
+                    <li>
+                        <a
+                            class="nav-selected-sidebar text-2xl"
+                            href={av.href}
+                            target={av.target || ""}
+                        >
+                            {av.name}
+                        </a>
+                    </li>
+                ))
+            }
         </ul>
     </nav>
 </div>

@@ -1,11 +1,14 @@
 ---
 import { Image } from "astro:assets";
+
 import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import Projects from "../components/Projects.astro";
-import LinkedIn from "../icons/linkedin.astro";
+
+import Download from "../icons/Download.astro";
+import LinkedIn from "../icons/Linkedin.astro";
 import Github from "../icons/github.astro";
 import Mail from "../icons/mail.astro";
 
@@ -32,7 +35,7 @@ const titleComplementary = "Complementario";
 const listEducationComplementarys = [
 	{
 		name: "Programa especializado en UI / UX Design",
-		institution: "Universidad Peruana de Ciencias Aplicadas",
+		institution: "Coursera",
 		year: "Año 2021",
 		link: "https://www.coursera.org/account/accomplishments/certificate/AMZXYMCGKX9B",
 	},
@@ -56,20 +59,20 @@ const titleContent5 = "Mis Proyectos";
 ---
 
 <Layout title="Sergio Huamán.">
-	<main class="lg:container mt-0 mx-auto text-[#0e0f0e] dark:text-[#f0f0f1]">
+	<main class="lg:container mt-0 mx-auto text-secondary dark:text-secondaryDark">
 		<header class="sticky top-0 left-0">
 			<Header />
 		</header>
 		<section
 			id=""
-			class="flex flex-wrap flex-col-reverse lg:flex-row items-center justify-center text-center lg:text-left gap-24 pt-4 pb-24 lg:p-14"
+			class="flex flex-wrap flex-col-reverse lg:flex-row items-center justify-center text-center lg:text-left gap-x-24 gap-y-8 pt-4 pb-10 px-4 lg:p-14"
 		>
 			<div
 				class="flex justify-center items-center flex-col gap-4 w-full lg:w-3/6"
 			>
 				<p class="text-2xl">{presentation}</p>
 				<div class="flex flex-col lg:flex-row gap-4">
-					<span class="flex text-5xl">{name}</span>
+					<h1 class="flex text-5xl">{name}</h1>
 					<div class="flex justify-center items-center">
 						<span
 							class="w-max bg-green-100 text-green-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-green-900 dark:text-green-300"
@@ -77,7 +80,7 @@ const titleContent5 = "Mis Proyectos";
 						>
 					</div>
 				</div>
-				<p class="text-2xl">{skillsDescription}</p>
+				<h3 class="text-1xl">{skillsDescription}</h3>
 				<div class="flex flex-col justify-center items-center gap-4">
 					<div
 						class="socialMedia flex justify-center flex-wrap items-center gap-2"
@@ -88,16 +91,11 @@ const titleContent5 = "Mis Proyectos";
 					</div>
 
 					<a
-						class="flex justify-center gap-2 items-center p-4 bg-[#0e0f0e] text-white dark:bg-[#fffefe] dark:text-black rounded-full border-2"
+						class="flex justify-center gap-2 items-center p-4 bg-secondary2 dark:bg-secondary2Dark text-primary dark:text-primaryDark rounded-full"
 						href="/SergioNicolasHuamánCheng_CV.pdf"
 						download="SergioNicolasHuamánCheng_CV.pdf"
 					>
-						<svg height="26" width="26" viewBox="0 0 512 512"
-							><path
-								class="fill-white dark:fill-[#0e0f0e]"
-								d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32V274.7l-73.4-73.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l128 128c12.5 12.5 32.8 12.5 45.3 0l128-128c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L288 274.7V32zM64 352c-35.3 0-64 28.7-64 64v32c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V416c0-35.3-28.7-64-64-64H346.5l-45.3 45.3c-25 25-65.5 25-90.5 0L165.5 352H64zm368 56a24 24 0 1 1 0 48 24 24 0 1 1 0-48z"
-							></path></svg
-						>
+						<Download />
 						{cvDownload}</a
 					>
 				</div>
@@ -105,7 +103,7 @@ const titleContent5 = "Mis Proyectos";
 
 			<div class="w-80 h-80 rounded-full border-4">
 				<img
-					src="https://imgbum.jobscdn.com/portal/img/postulantes/11/static/cvOriginalPic_1054495930_bum_v7c978d.jpg"
+					src="/images/profile.webp"
 					alt="Profile"
 					width={600}
 					height={600}
@@ -114,11 +112,11 @@ const titleContent5 = "Mis Proyectos";
 			</div>
 		</section>
 		<section id="about">
-			<div class="grid gap-y-12 place-items-center p-4 lg:px-24 lg:py-14">
+			<div class="grid gap-y-12 place-items-center pt-8 pb-4 px-4 lg:px-24">
 				<div class="grid gap-4">
 					<h1>
 						{titleContent2}
-						<span class="text-cyan-400">.</span>
+						<span class="text-secondary2 dark:text-secondary2Dark">.</span>
 					</h1>
 					<p>{descriptionAboutMeContent2}</p>
 				</div>
@@ -126,13 +124,13 @@ const titleContent5 = "Mis Proyectos";
 		</section>
 		<section>
 			<div
-				class="grid grid-cols-1 gap-y-8 place-items-center p-8 lg:px-24 lg:py-14"
+				class="grid grid-cols-1 gap-y-8 place-items-center pt-4 pb-4 px-4 lg:px-24"
 			>
-				<h1>{titleContent3} <span class="text-cyan-400">.</span></h1>
+				<h1>{titleContent3} <span class="text-secondary2 dark:text-secondary2Dark">.</span></h1>
 				<div>
 					<ul class="list-disc">
 						<li>
-							<h3>{educationUniversitary}</h3>
+							<h2>{educationUniversitary}</h2>
 							<p class="italic">{institutionUniversitary}</p>
 							<p class="italic">{state}</p>
 						</li>
@@ -145,7 +143,7 @@ const titleContent5 = "Mis Proyectos";
 							listEducationComplementarys.map((e) => {
 								return (
 									<li>
-										<a href={e.link} class="text-cyan-400" target="_blank">
+										<a href={e.link} class="text-secondary2 dark:text-secondary2Dark underline underline-offset-1" target="_blank">
 											{e.name}
 										</a>
 										<p class="italic">{e.institution}</p>
@@ -160,17 +158,17 @@ const titleContent5 = "Mis Proyectos";
 		</section>
 		<section>
 			<div
-				class="grid grid-cols-1 gap-y-8 place-items-center p-4 lg:px-24 lg:py-14"
+				class="grid grid-cols-1 gap-y-8 place-items-center pt-4 pb-4 px-4 lg:px-24"
 			>
-				<h1>{titleContent4} <span class="text-cyan-400">.</span></h1>
+				<h1>{titleContent4} <span class="text-secondary2 dark:text-secondary2Dark">.</span></h1>
 				<Card />
 			</div>
 		</section>
 		<section
 			id="projects"
-			class="flex flex-col justify-center items-start gap-8 p-4 lg:px-24 lg:py-14"
+			class="flex flex-col justify-center items-start gap-8 pt-4 pb-4 px-4 lg:px-24"
 		>
-			<h1>{titleContent5} <span class="text-cyan-400">.</span></h1>
+			<h1>{titleContent5} <span class="text-secondary2 dark:text-secondary2Dark">.</span></h1>
 			<Projects />
 		</section>
 		<Footer />
