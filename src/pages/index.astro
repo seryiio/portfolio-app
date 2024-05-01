@@ -26,7 +26,7 @@ const titleContent3 = "Educación";
 
 const educationUniversitary = "Ingeniero de Sistemas de Información";
 const institutionUniversitary = "Universidad Peruana de Ciencias Aplicadas";
-const state = "2018 - Actualmente";
+const state = "2018 - Actualmente (Quinto Superior)";
 
 const titleComplementary = "Complementario";
 
@@ -34,19 +34,31 @@ const listEducationComplementarys = [
 	{
 		name: "Programa especializado en UI / UX Design",
 		institution: "Coursera",
-		year: "Año 2021",
+		year: "2021",
 		link: "https://www.coursera.org/account/accomplishments/certificate/AMZXYMCGKX9B",
+	},
+	{
+		name: "Google Analytics",
+		institution: "Google",
+		year: "2022",
+		link: "https://drive.google.com/file/d/1wOS9U5-nhZwoFTg947dZ5B1FbAsuhpdP/view",
+	},
+	{
+		name: "Data Studio",
+		institution: "Google",
+		year: "2022",
+		link: "https://drive.google.com/file/d/1PlsGGykRbyCW8ZuzxkM7hOnpE7RowhUY/view",
 	},
 	{
 		name: "Scrum Fundamentals Certified",
 		institution: "SCRUMstudy",
-		year: "Año 2022",
+		year: "2022",
 		link: "https://www.scrumstudy.com/certification/verify?type=SFC&number=956713",
 	},
 	{
 		name: "Excel Skills for Business: Advanced",
 		institution: "Coursera",
-		year: "Año 2023",
+		year: "2023",
 		link: "https://www.coursera.org/account/accomplishments/verify/TVNTBEHXZ2U7",
 	},
 ];
@@ -146,7 +158,7 @@ const titleContent5 = "Mis Proyectos";
 				</div>
 				<div class="grid gap-2">
 					<h2>{titleComplementary}</h2>
-					<ul class="grid gap-2 list-disc">
+					<ul class="grid gap-4 list-disc">
 						{
 							listEducationComplementarys.map((e) => {
 								return (
@@ -158,8 +170,11 @@ const titleContent5 = "Mis Proyectos";
 										>
 											{e.name}
 										</a>
-										<p class="italic">{e.institution}</p>
-										<p class="italic">{e.year}</p>
+										<div class="flex gap-x-2" >
+											<p class="italic">{e.institution}</p>
+											<p>|</p>
+											<p class="italic">{e.year}</p>
+										</div>
 									</li>
 								);
 							})
